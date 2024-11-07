@@ -23,7 +23,7 @@ public class WikiTest extends AbstractWebTest{
     @Test
     public void testSearch() throws InterruptedException{
        WikiHomePage homePage = navigateToPage("https://www.wikipedia.org/",WikiHomePage::new);
-       homePage.searchFor("Cat S");
+       homePage.searchFor("page object model");
        homePage.waitUntilGone();
 
        WikiSearchResults searchResults = assertNewPage(WikiSearchResults::new);
@@ -35,8 +35,8 @@ public class WikiTest extends AbstractWebTest{
        searchResults.waitUntilGone();
        final SimplePage contentPage = assertNewPage(SimplePage::new);
        assertAll("group assertions"
-          , () -> assertEquals("Cat - Wikipedia", contentPage.getTitle())
-          , () -> assertEquals("https://en.wikipedia.org/wiki/Cat", contentPage.getURL())
+          , () -> assertEquals("Object model - Wikipedia", contentPage.getTitle())
+          , () -> assertEquals("https://en.wikipedia.org/wiki/Object_model", contentPage.getURL())
     );
 
     }

@@ -12,7 +12,7 @@ import edu.rit.swen253.utils.DomElement;
 
 public class WikiSearchResults extends AbstractPage {
     //copied full Xpath from edge's devoloper tools
-    private static final By RESULTS_FINDER = By.xpath("/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[3]/div[4]/ul");
+    private static final By RESULTS_FINDER = By.xpath("/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[2]/div[4]/ul");
     private DomElement searchResults;
 
     public WikiSearchResults(){
