@@ -1,4 +1,4 @@
-package edu.rit.swen253.page;
+package edu.rit.swen253.page.wiki;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -7,6 +7,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 
+import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
 
 public class WikiSearchResults extends AbstractPage {

@@ -1,4 +1,4 @@
-package edu.rit.swen253.page;
+package edu.rit.swen253.page.wiki;
 
 import org.openqa.selenium.By;
 

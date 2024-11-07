@@ -1,4 +1,4 @@
-package edu.rit.swen253.page;
+package edu.rit.swen253.page.wiki;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.interactions.Actions;
 
+import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
 import edu.rit.swen253.utils.SeleniumUtils;
 

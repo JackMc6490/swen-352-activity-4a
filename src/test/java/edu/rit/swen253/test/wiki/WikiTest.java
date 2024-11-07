@@ -1,4 +1,4 @@
-package edu.rit.swen253.test;
+package edu.rit.swen253.test.wiki;
 
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -9,9 +9,10 @@ import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
 import edu.rit.swen253.page.SimplePage;
-import edu.rit.swen253.page.WikiHomePage;
-import edu.rit.swen253.page.WikiSearchResults;
-import edu.rit.swen253.page.WikiSingleResult;
+import edu.rit.swen253.page.wiki.WikiHomePage;
+import edu.rit.swen253.page.wiki.WikiSearchResults;
+import edu.rit.swen253.page.wiki.WikiSingleResult;
+import edu.rit.swen253.test.AbstractWebTest;
 
 
 
@@ -24,7 +25,7 @@ public class WikiTest extends AbstractWebTest{
        WikiHomePage homePage = navigateToPage("https://www.wikipedia.org/",WikiHomePage::new);
        homePage.searchFor("Cat S");
        homePage.waitUntilGone();
-       
+
        WikiSearchResults searchResults = assertNewPage(WikiSearchResults::new);
        for (WikiSingleResult result : searchResults.getSearchResults()) {
             logger.info(result.getLink());
