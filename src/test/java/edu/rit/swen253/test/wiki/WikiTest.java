@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import edu.rit.swen253.page.SimplePage;
 import edu.rit.swen253.page.wiki.WikiHomePage;
-import edu.rit.swen253.page.wiki.WikiSearchResults;
-import edu.rit.swen253.page.wiki.WikiSingleResult;
+import edu.rit.swen253.page.wiki.WikiResultsPage;
+import edu.rit.swen253.page.wiki.WikiResultView;
 import edu.rit.swen253.test.AbstractWebTest;
 
 
@@ -26,9 +26,9 @@ public class WikiTest extends AbstractWebTest{
        homePage.searchFor("page object model");
        homePage.waitUntilGone();
 
-       WikiSearchResults searchResults = assertNewPage(WikiSearchResults::new);
-       for (WikiSingleResult result : searchResults.getSearchResults()) {
-            logger.info(result.getLink());
+       WikiResultsPage searchResults = assertNewPage(WikiResultsPage::new);
+       for (WikiResultView result : searchResults.getSearchResults()) {
+            logger.info(result.getName() + ": " + result.getLink());
        }
 
        searchResults.getSearchResults().get(0).clickLink();

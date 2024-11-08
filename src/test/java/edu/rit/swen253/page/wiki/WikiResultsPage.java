@@ -10,12 +10,12 @@ import org.openqa.selenium.TimeoutException;
 import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
 
-public class WikiSearchResults extends AbstractPage {
+public class WikiResultsPage extends AbstractPage {
     //copied full Xpath from edge's devoloper tools
     private static final By RESULTS_FINDER = By.xpath("/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[2]/div[4]/ul");
     private DomElement searchResults;
 
-    public WikiSearchResults(){
+    public WikiResultsPage(){
         super();
         try {
             searchResults = findOnPage(RESULTS_FINDER);    
@@ -25,7 +25,7 @@ public class WikiSearchResults extends AbstractPage {
         }
     }
 
-    public List<WikiSingleResult> getSearchResults(){
-        return searchResults.findChildrenBy(By.xpath("li")).stream().map(WikiSingleResult::new).toList();
+    public List<WikiResultView> getSearchResults(){
+        return searchResults.findChildrenBy(By.xpath("li")).stream().map(WikiResultView::new).toList();
     }
 }
