@@ -16,15 +16,15 @@ import edu.rit.swen253.utils.DomElement;
  * @author Jack McCarthy
  */
 public class WikiResultsPage extends AbstractPage {
-    //An xpath used to find the unordered list on the results page
-    //Created using "copy full Xpath" from edge's devoloper tools
-    private static final By RESULTS_FINDER = By.xpath("/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[2]/div[4]/ul");
+    //A css selector used to find the unordered list on the results page
+    //Created using "copy selector" from Edge's devoloper tools
+    private static final By RESULTS_FINDER = By.cssSelector("#mw-content-text > div.searchresults.mw-searchresults-has-iw > div.mw-search-results-container > ul");
     //The unordered list found on the search results page
     private DomElement searchResults;
 
     /**
      * The constructor for a WikiResultsPage
-     * Uses the global xpath to find the <ul> tag and turn it into a Domelement
+     * Uses the global css selector to find the <ul> tag and turn it into a Domelement
      */
     public WikiResultsPage(){
         super();
