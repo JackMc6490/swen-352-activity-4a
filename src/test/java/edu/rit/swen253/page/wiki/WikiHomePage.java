@@ -17,7 +17,7 @@ import edu.rit.swen253.utils.SeleniumUtils;
  */
 public class WikiHomePage extends AbstractPage {
     //A css selector that can be used to find the input field on the home page
-    private static final By SEARCH_FINDER = By.cssSelector("main > div.search-container > form.pure-form > fieldset > div.search-input > input");
+    private static final By INPUT_FINDER = By.cssSelector("main > div.search-container > form.pure-form > fieldset > div.search-input > input");
     //A dom element used to represent the <input> tag
     private DomElement searchinput;
 
@@ -28,7 +28,7 @@ public class WikiHomePage extends AbstractPage {
     public WikiHomePage(){
         super();
         try {
-            searchinput = findOnPage(SEARCH_FINDER);    
+            searchinput = findOnPage(INPUT_FINDER);    
         } 
         catch (TimeoutException e) {
             fail("Input field not found");      

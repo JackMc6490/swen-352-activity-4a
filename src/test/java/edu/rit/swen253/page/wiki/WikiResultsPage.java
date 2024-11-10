@@ -24,7 +24,7 @@ public class WikiResultsPage extends AbstractPage {
 
     /**
      * The constructor for a WikiResultsPage
-     * Uses the global css selector to find the <ul> tag and turn it into a Domelement
+     * Uses the css selector to find the <ul> tag and turn it into a Domelement object
      */
     public WikiResultsPage(){
         super();

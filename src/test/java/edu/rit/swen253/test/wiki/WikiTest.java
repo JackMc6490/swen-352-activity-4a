@@ -47,14 +47,14 @@ public class WikiTest extends AbstractWebTest{
        
        //For each result view on the results page, log it's title and URL 
        for (WikiResultView result : resultsPage.getSearchResults()) {
-            logger.info("{Title: " + result.getName() + ", Link: " + result.getLink() + "}");
+            logger.info("{Title: " + result.getTitle() + ", Link: " + result.getLink() + "}");
        }
 
        //Click the first result
        resultsPage.getSearchResults().get(0).clickLink();
        resultsPage.waitUntilGone();
 
-       //Validate that we navigated to the expected page
+       //Validate that we navigated to the expected page (copied from example test)
        final SimplePage contentPage = assertNewPage(SimplePage::new);
        assertAll("group assertions"
           , () -> assertEquals("Object model - Wikipedia", contentPage.getTitle())

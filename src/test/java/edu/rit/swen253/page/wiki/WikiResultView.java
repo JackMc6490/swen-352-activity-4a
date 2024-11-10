@@ -50,37 +50,37 @@ import edu.rit.swen253.utils.HtmlUtils;
  * @author Jack McCarthy
  */
 public class WikiResultView {
-    //The <a> tag found in the li element
+    //The <a> tag found in the <li> element
     private final DomElement link;
 
     /**
      * The constructor for WikiResultView, takes the passed in element and uses 
      * findChildBy to find the link as that is the only information we need to log for testing 
-     * @param viewContainer: One li element in the unordered list
+     * @param viewContainer: One <li> element in the unordered list
      */
     public WikiResultView(final DomElement viewContainer){
         this.link = viewContainer.findChildBy(HtmlUtils.ANCHOR_FINDER);
     }
 
     /**
-     * Clicks the link found in the li element
+     * Clicks the link found in the <li> element
      */
     public void clickLink() {
         link.click();
     }
 
     /**
-     * Returns the url found in the <a> tag of the li element
+     * Returns the url found in the <a> tag of the <li> element
      * @return: the full URL of the search result
      */
     public String getLink(){
         return this.link.getAttribute("href");
     }
     /**
-     * Returns the title found in the <a> tag of the li element
+     * Returns the title found in the <a> tag of the <li> element
      * @return: the title of the search result
      */
-    public String getName(){
+    public String getTitle(){
         return this.link.getAttribute("title");
     }
 
