@@ -3,7 +3,6 @@ package edu.rit.swen253.page.youtube;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -23,8 +22,10 @@ import edu.rit.swen253.utils.SeleniumUtils;
 public class YouTubeHomePage extends AbstractPage {
 
     private static final By SEARCH_FINDER = By.name("search_query");
+    private static final By SUBMIT_FINDER = By.id("search-icon-legacy");
 
     private DomElement searchElement;
+    private DomElement submitElement;
 
 
     /**
@@ -35,6 +36,7 @@ public class YouTubeHomePage extends AbstractPage {
         super();
         try {
             searchElement = findOnPage(SEARCH_FINDER);
+            submitElement = findOnPage(SUBMIT_FINDER);
         } catch (TimeoutException e) {
             fail("Input field not found");
         }
@@ -46,7 +48,7 @@ public class YouTubeHomePage extends AbstractPage {
      */
     public void search(String search) {
         searchElement.enterText(search);
-        Actions action = SeleniumUtils.makeAction().sendKeys(Keys.ENTER);
+        Actions action = SeleniumUtils.makeAction().click(submitElement.getWebElement());
         action.perform();
     }
 
