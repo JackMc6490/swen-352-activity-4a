@@ -51,7 +51,7 @@ public class BaelTest extends AbstractWebTest {
             logger.info("{Title: " + result.getName() + ", Link: " + result.getLink() +
                     "}");
         }
-
+        
         // Click the first result
         resultsPage.getSearchResults().get(0).clickLink();
         resultsPage.waitUntilGone();
