@@ -10,7 +10,7 @@ public class BaelResultView {
     /**
      * The constructor for BaelResultView, takes the passed in element and uses 
      * findChildBy to find the link as that is the only information we need to log for testing 
-     * @param viewContainer: One li element in the unordered list
+     * @param viewContainer: One article element in the unordered list
      */
     public BaelResultView(final DomElement viewContainer){
         this.link = viewContainer.findChildBy(HtmlUtils.ANCHOR_FINDER);
