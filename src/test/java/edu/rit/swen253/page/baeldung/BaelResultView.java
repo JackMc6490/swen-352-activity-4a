@@ -4,7 +4,6 @@ import edu.rit.swen253.utils.DomElement;
 import edu.rit.swen253.utils.HtmlUtils;
 
 public class BaelResultView {
-    //The <a> tag found in the li element
     private final DomElement link;
 
     /**
