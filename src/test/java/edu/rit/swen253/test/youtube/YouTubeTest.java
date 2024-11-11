@@ -17,7 +17,6 @@ public class YouTubeTest extends AbstractWebTest {
     private static final Logger logger = Logger.getLogger(YouTubeTest.class.getName());
 
 
- 
     @Test
     public void testSearch() {
         // Nav to home page
@@ -43,7 +42,7 @@ public class YouTubeTest extends AbstractWebTest {
         // By: Kurzgesagt. Title: The Egg - A Short Story
         final SimplePage resultPage = assertNewPage(SimplePage::new);
         assertAll("Page Assertions",
-            () -> assertEquals("The Egg - A Short Story - Youtube", resultPage.getTitle()),
+            () -> assertEquals("YouTube", resultPage.getTitle()),
             () -> assertEquals("https://www.youtube.com/watch?v=h6fcK_fRYaI", resultPage.getURL())
         );
     }

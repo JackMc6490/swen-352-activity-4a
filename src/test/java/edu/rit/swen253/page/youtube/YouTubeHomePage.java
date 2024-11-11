@@ -5,7 +5,10 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 
 import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
@@ -45,6 +48,17 @@ public class YouTubeHomePage extends AbstractPage {
         searchElement.enterText(search);
         Actions action = SeleniumUtils.makeAction().sendKeys(Keys.ENTER);
         action.perform();
+    }
+
+    /**
+     * Overrides waitUntilGone because YouTube has persistence of all elements
+     * Waits on <ytd-browse> element to become invisible
+     */
+    @Override
+    public void waitUntilGone() {
+        FluentWait<WebDriver> wait = SeleniumUtils.getShortWait();
+        DomElement browseElement = findOnPage(By.tagName("ytd-browse"));
+        wait.until(ExpectedConditions.invisibilityOf(browseElement.getWebElement()));
     }
 
 }
