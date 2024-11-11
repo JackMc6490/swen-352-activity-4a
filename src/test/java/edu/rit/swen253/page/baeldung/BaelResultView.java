@@ -16,21 +16,21 @@ public class BaelResultView {
     }
 
     /**
-     * Clicks the link found in the li element
+     * Clicks the link found in the article element
      */
     public void clickLink() {
         link.click();
     }
 
     /**
-     * Returns the url found in the <a> tag of the li element
+     * Returns the url found in the <a> tag of the article element
      * @return: the full URL of the search result
      */
     public String getLink(){
         return this.link.getAttribute("href");
     }
     /**
-     * Returns the title found in the <a> tag of the li element
+     * Returns the title found in the <a> tag of the article element
      * @return: the title of the search result
      */
     public String getName(){

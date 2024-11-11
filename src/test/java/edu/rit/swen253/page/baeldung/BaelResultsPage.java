@@ -12,7 +12,7 @@ import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
 
 /**
- * A Page Object for the
+ * A Page Object for the Baeldung search results page.
  * 
  * @author Liam Weiner
  */
@@ -38,8 +38,8 @@ public class BaelResultsPage extends AbstractPage {
     }
 
     /**
-     * This fucntion is used to turn all the <li> tags in the unordered list into BaelResultView objects
-     * @return a list of all the <li> elements on the first page of search results, translated into BaelResultView objects
+     * This fucntion is used to turn all the <article> tags in the unordered list into BaelResultView objects
+     * @return a list of all the <article> elements on the first page of search results, translated into BaelResultView objects
      */
     public List<BaelResultView> getSearchResults(){
         return results.findChildrenBy(By.xpath("article")).stream().map(BaelResultView::new).toList();

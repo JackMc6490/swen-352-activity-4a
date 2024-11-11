@@ -1,6 +1,6 @@
 package edu.rit.swen253.page.baeldung;
 
-import static org.junit.jupiter.api.Assertions.fail;
+
 import org.openqa.selenium.By;
 import edu.rit.swen253.page.AbstractPage;
 import edu.rit.swen253.utils.DomElement;
